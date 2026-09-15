@@ -30,17 +30,22 @@ namespace oop_1
             #region question 5
             /*Using the Genre enum above, print the underlying int value Genre.Fiction,
            Genre.NonFiction, and Genre.Science by casting each to int.*/
-            int fictionValue = (int)Genre.Fiction;
-            int nonFictionValue = (int)Genre.NonFiction;
-            int scienceValue = (int)Genre.Science;
+            //int fictionValue = (int)Genre.Fiction;
+            //int nonFictionValue = (int)Genre.NonFiction;
+            //int scienceValue = (int)Genre.Science;
 
-            Console.WriteLine($"Genre.Fiction: {fictionValue}");
-            Console.WriteLine($"Genre.NonFiction: {nonFictionValue}");
-            Console.WriteLine($"Genre.Science: {scienceValue}");
+            //Console.WriteLine($"Genre.Fiction: {fictionValue}");
+            //Console.WriteLine($"Genre.NonFiction: {nonFictionValue}");
+            //Console.WriteLine($"Genre.Science: {scienceValue}");
 
             #endregion
 
-
+            #region question 6
+            // Given int genreNumber = 1;, cast it into a Genre value and print the result.
+            int genreNumber = 1;
+            Genre genre = (Genre)genreNumber;
+            Console.WriteLine($"Genre: {genre}");
+            #endregion
         }
     }
 }
