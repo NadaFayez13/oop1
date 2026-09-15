@@ -42,9 +42,17 @@ namespace oop_1
 
             #region question 6
             // Given int genreNumber = 1;, cast it into a Genre value and print the result.
-            int genreNumber = 1;
-            Genre genre = (Genre)genreNumber;
-            Console.WriteLine($"Genre: {genre}");
+            //int genreNumber = 1;
+            //Genre genre = (Genre)genreNumber;
+            //Console.WriteLine($"Genre: {genre}");
+            #endregion
+
+            #region question 7
+            /*Given string genreText = "Science";, convert it into a Genre value using
+            Enum.Parse() and print the result.*/
+            string genreText = "Science";
+            Genre genre = (Genre)Enum.Parse(typeof(Genre), genreText);
+            Console.WriteLine($"genre: {genre}");
             #endregion
         }
     }
