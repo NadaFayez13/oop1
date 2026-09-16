@@ -13,12 +13,16 @@ namespace oop_1
 
         public DeliveryAddress Destination { get; set; }
 
+        public Shipment(string trackingCode)
+            : this(trackingCode, "Unknown", 1, 50, new DeliveryAddress("alex", "default Street", 1))
+        {
+        }
         public Shipment(string trackingCode, string description, double weight, decimal deliveryFee, DeliveryAddress destination)
         {
             this.trackingCode = string.IsNullOrWhiteSpace(trackingCode) ? "UNKNOWN" : trackingCode;
-            this.description = string.IsNullOrWhiteSpace(description) ? "No Description" : description;
-            this.weight = weight > 0 ? weight : 1.0;
-            this.deliveryFee = deliveryFee > 0 ? deliveryFee : 10.0m;
+            this.description = string.IsNullOrWhiteSpace(description) ? "Unknown" : description;
+            this.weight = weight > 0 ? weight : 1;
+            this.deliveryFee = deliveryFee > 0 ? deliveryFee : 50;
             Destination = destination;
         }
 
