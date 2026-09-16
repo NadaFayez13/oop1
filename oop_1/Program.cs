@@ -3,17 +3,17 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace oop_1
 {
-    public enum Genre
-    {
-        Fiction,
-        NonFiction,
-        Science
-    }
-    public class Book
-    {
-        public string Title { get; set; }
-        public Genre Genre { get; set; }
-    }
+    //public enum Genre
+    //{
+    //    Fiction,
+    //    NonFiction,
+    //    Science
+    //}
+    //public class Book
+    //{
+    //    public string Title { get; set; }
+    //    public Genre Genre { get; set; }
+    //}
 
     internal class Program
     {
@@ -21,11 +21,11 @@ namespace oop_1
         {
             //sheet5
             #region question 4
-            Book book = new Book();
-            book.Title = "Science book";
-            book.Genre = Genre.Science;
-            Console.WriteLine($"Title: {book.Title}");
-            Console.WriteLine($"Genre: {book.Genre}");
+            //Book book = new Book();
+            //book.Title = "Science book";
+            //book.Genre = Genre.Science;
+            //Console.WriteLine($"Title: {book.Title}");
+            //Console.WriteLine($"Genre: {book.Genre}");
             #endregion
 
             #region question 5
@@ -70,7 +70,7 @@ namespace oop_1
             //}
             #endregion
 
-            //sheet6
+            //sheet6 Theoretical Questions
             #region Theoretical Question 1
             //a) What happens when a DeliveryAddress variable is copied into another variable and the copy is modified?
 
@@ -92,9 +92,24 @@ namespace oop_1
              */
             //b) How can private fields and public properties improve this design?
 
-           /* 1.making fields private hides the internal data from direct access
-            2.public properties allow us to add checks(in setters) to prevent invalid values before saving them
-            3.properties give us flexibility to make fields read-only or restrict how they are updated */
+            /* 1.making fields private hides the internal data from direct access
+             2.public properties allow us to add checks(in setters) to prevent invalid values before saving them
+             3.properties give us flexibility to make fields read-only or restrict how they are updated */
+            #endregion
+
+            //sheet6 Practical Questions
+            #region Question 01
+
+            DeliveryAddress address1 = new DeliveryAddress("Alex", "gamal abdelnasser", 13);
+
+            DeliveryAddress address2 = address1;
+
+            address2.City = "cairo";
+            address2.BuildingNumber = 11;
+
+            Console.WriteLine($"address1: {address1.GetFullAddress()}");
+            Console.WriteLine($"address2: {address2.GetFullAddress()}");
+
             #endregion
         }
     }
