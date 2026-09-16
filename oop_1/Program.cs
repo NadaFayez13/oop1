@@ -98,18 +98,53 @@ namespace oop_1
             #endregion
 
             //sheet6 Practical Questions
-            #region Question 01
+            #region Question 1
 
-            DeliveryAddress address1 = new DeliveryAddress("Alex", "gamal abdelnasser", 13);
+            //DeliveryAddress address1 = new DeliveryAddress("Alex", "gamal abdelnasser", 13);
 
-            DeliveryAddress address2 = address1;
+            //DeliveryAddress address2 = address1;
 
-            address2.City = "cairo";
-            address2.BuildingNumber = 11;
+            //address2.City = "cairo";
+            //address2.BuildingNumber = 11;
 
-            Console.WriteLine($"address1: {address1.GetFullAddress()}");
-            Console.WriteLine($"address2: {address2.GetFullAddress()}");
+            //Console.WriteLine($"address1: {address1.GetFullAddress()}");
+            //Console.WriteLine($"address2: {address2.GetFullAddress()}");
 
+            #endregion
+
+            #region Question 6 points b
+            Shipment[] shipments = new Shipment[3];
+
+            for (int i = 0; i < 3; i++)
+            {
+                Console.WriteLine($"Enter Shipment {i + 1} Data");
+
+                Console.Write("Tracking Code: ");
+                string code = Console.ReadLine();
+
+                Console.Write("Description: ");
+                string desc = Console.ReadLine();
+
+                Console.Write("Weight: ");
+                double weight = double.Parse(Console.ReadLine());
+
+                Console.Write("Delivery Fee: ");
+                decimal fee = decimal.Parse(Console.ReadLine());
+
+                Console.Write("City: ");
+                string city = Console.ReadLine();
+
+                Console.Write("Street: ");
+                string street = Console.ReadLine();
+
+                Console.Write("Building Number: ");
+                int bNum = int.Parse(Console.ReadLine());
+
+                DeliveryAddress addr = new DeliveryAddress(city, street, bNum);
+                shipments[i] = new Shipment(code, desc, weight, fee, addr);
+
+                Console.WriteLine("\nShipment added successfully.\n");
+            }
             #endregion
         }
     }
