@@ -113,38 +113,38 @@ namespace oop_1
             #endregion
 
             #region Question 6 points b
-            Shipment[] shipments = new Shipment[3];
+            //Shipment[] shipments = new Shipment[3];
 
-            for (int i = 0; i < 3; i++)
-            {
-                Console.WriteLine($"Enter Shipment {i + 1} Data");
+            //for (int i = 0; i < 3; i++)
+            //{
+            //    Console.WriteLine($"Enter Shipment {i + 1} Data");
 
-                Console.Write("Tracking Code: ");
-                string code = Console.ReadLine();
+            //    Console.Write("Tracking Code: ");
+            //    string code = Console.ReadLine();
 
-                Console.Write("Description: ");
-                string desc = Console.ReadLine();
+            //    Console.Write("Description: ");
+            //    string desc = Console.ReadLine();
 
-                Console.Write("Weight: ");
-                double weight = double.Parse(Console.ReadLine());
+            //    Console.Write("Weight: ");
+            //    double weight = double.Parse(Console.ReadLine());
 
-                Console.Write("Delivery Fee: ");
-                decimal fee = decimal.Parse(Console.ReadLine());
+            //    Console.Write("Delivery Fee: ");
+            //    decimal fee = decimal.Parse(Console.ReadLine());
 
-                Console.Write("City: ");
-                string city = Console.ReadLine();
+            //    Console.Write("City: ");
+            //    string city = Console.ReadLine();
 
-                Console.Write("Street: ");
-                string street = Console.ReadLine();
+            //    Console.Write("Street: ");
+            //    string street = Console.ReadLine();
 
-                Console.Write("Building Number: ");
-                int bNum = int.Parse(Console.ReadLine());
+            //    Console.Write("Building Number: ");
+            //    int bNum = int.Parse(Console.ReadLine());
 
-                DeliveryAddress addr = new DeliveryAddress(city, street, bNum);
-                shipments[i] = new Shipment(code, desc, weight, fee, addr);
+            //    DeliveryAddress addr = new DeliveryAddress(city, street, bNum);
+            //    shipments[i] = new Shipment(code, desc, weight, fee, addr);
 
-                Console.WriteLine("\nShipment added successfully.\n");
-            }
+            //    Console.WriteLine("\nShipment added successfully.\n");
+            //}
             #endregion
 
             #region Question 6 point d
@@ -156,24 +156,36 @@ namespace oop_1
             #endregion
 
             #region Question 6 point e,f,g
-            Console.Write("\nEnter a tracking code to search: ");
-            string searchCode = Console.ReadLine();
+            //Console.Write("\nEnter a tracking code to search: ");
+            //string searchCode = Console.ReadLine();
 
-            bool found = false;
-            for (int i = 0; i < shipments.Length; i++)
-            {
-                if (shipments[i].GetTrackingCode().Equals(searchCode, StringComparison.OrdinalIgnoreCase))
-                {
-                    Console.WriteLine($"Shipment found: {shipments[i].GetTrackingCode()} - {shipments[i].GetDescription()}");
-                    found = true;
-                    break;
-                }
-            }
+            //bool found = false;
+            //for (int i = 0; i < shipments.Length; i++)
+            //{
+            //    if (shipments[i].GetTrackingCode().Equals(searchCode, StringComparison.OrdinalIgnoreCase))
+            //    {
+            //        Console.WriteLine($"Shipment found: {shipments[i].GetTrackingCode()} - {shipments[i].GetDescription()}");
+            //        found = true;
+            //        break;
+            //    }
+            //}
 
-            if (!found)
-            {
-                Console.WriteLine("Shipment not found.");
-            }
+            //if (!found)
+            //{
+            //    Console.WriteLine("Shipment not found.");
+            //}
+            #endregion
+
+            #region Question 6 point h
+            Console.WriteLine("\nStruct Copy Test ");
+            DeliveryAddress originalAddr = new DeliveryAddress("alex", "fawzy moaaz Street", 15);
+            DeliveryAddress copiedAddr = originalAddr;
+
+            copiedAddr.Street = "port saied Street";
+            copiedAddr.BuildingNumber = 20;
+
+            Console.WriteLine($"Original Address: {originalAddr.GetFullAddress()}");
+            Console.WriteLine($"Copied Address:   {copiedAddr.GetFullAddress()}");
             #endregion
         }
     }
