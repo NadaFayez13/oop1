@@ -146,6 +146,14 @@ namespace oop_1
                 Console.WriteLine("\nShipment added successfully.\n");
             }
             #endregion
+
+            #region Question 6 points d
+            Console.WriteLine("All Shipments");
+            for (int i = 0; i < shipments.Length; i++)
+            {
+                shipments[i].PrintShipment();
+            }
+            #endregion
         }
     }
 }
