@@ -147,11 +147,32 @@ namespace oop_1
             }
             #endregion
 
-            #region Question 6 points d
-            Console.WriteLine("All Shipments");
+            #region Question 6 point d
+            //Console.WriteLine("All Shipments");
+            //for (int i = 0; i < shipments.Length; i++)
+            //{
+            //    shipments[i].PrintShipment();
+            //}
+            #endregion
+
+            #region Question 6 point e,f,g
+            Console.Write("\nEnter a tracking code to search: ");
+            string searchCode = Console.ReadLine();
+
+            bool found = false;
             for (int i = 0; i < shipments.Length; i++)
             {
-                shipments[i].PrintShipment();
+                if (shipments[i].GetTrackingCode().Equals(searchCode, StringComparison.OrdinalIgnoreCase))
+                {
+                    Console.WriteLine($"Shipment found: {shipments[i].GetTrackingCode()} - {shipments[i].GetDescription()}");
+                    found = true;
+                    break;
+                }
+            }
+
+            if (!found)
+            {
+                Console.WriteLine("Shipment not found.");
             }
             #endregion
         }
