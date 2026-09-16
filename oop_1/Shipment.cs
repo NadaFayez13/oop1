@@ -75,5 +75,23 @@ namespace oop_1
         {
             return deliveryFee + ((decimal)weight * 5m);
         }
+
+        public void UpdateDeliveryFee(decimal newFee)
+        {
+            if (newFee > 0)
+            {
+                deliveryFee = newFee;
+            }
+        }
+
+        public void PrintShipment()
+        {
+            Console.WriteLine($"tracking code:  {trackingCode}");
+            Console.WriteLine($"description:  {description}");
+            Console.WriteLine($"weight:  {weight} kg");
+            Console.WriteLine($"delivery fee:  {deliveryFee:C}");
+            Console.WriteLine($"destination:  {Destination.GetFullAddress()}");
+            Console.WriteLine($"estimated cost:  {GetEstimatedCost():C}");
+        }
     }
 }
